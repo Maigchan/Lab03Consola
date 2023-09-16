@@ -13,7 +13,7 @@ class Program
         var list = ListarEmpleadosListaObjetos();
         foreach (var item in list)
         {
-            Console.WriteLine(item.Id + item.Nombre + item.Apellidos + item.Sueldo + item.FechaVencimiento);
+            Console.WriteLine(item.Id + "\t" + item.Nombre + "\t" + item.Apellidos + "\t" + item.Sueldo + "\t" + item.FechaVencimiento);
         };
 
     }
