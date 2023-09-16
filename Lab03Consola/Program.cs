@@ -57,7 +57,7 @@ class Program
             connection.Open();
 
             // Consulta SQL para seleccionar datos
-            string query = "SELECT IdTrabajador,Nombre,Apellidos,Sueldo,FechaVencimiento FROM Empleados1";
+            string query = "SELECT IdTrabajador,Nombre,Apellidos,Sueldo,FechaVencimiento FROM Trabajadores";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -89,7 +89,7 @@ class Program
 
 
         }
-        return empleados;
+        return trabajador;
 
     }
 
