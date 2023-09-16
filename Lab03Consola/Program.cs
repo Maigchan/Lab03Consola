@@ -2,8 +2,6 @@
 using System.Data.SqlClient;
 using System.Data;
 
-using Lab03Consola;
-
 class Program
 {
     // Cadena de conexión a la base de datos
@@ -15,7 +13,7 @@ class Program
         var list = ListarEmpleadosListaObjetos();
         foreach (var item in list)
         {
-            Console.WriteLine(item.idTrabajador + item.Nombre + item.Apellidos + item.Sueldo + item.FechaVencimiento);
+            Console.WriteLine(item.Id + item.Nombre + item.Apellidos + item.Sueldo + item.FechaVencimiento);
         };
 
     }
