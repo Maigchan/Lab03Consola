@@ -74,7 +74,7 @@ class Program
                             {
                                 Id = (int)reader["IdTrabajador"],
                                 Nombre = reader["Nombre"].ToString(),
-                                Cargo = reader["Apellidos"].ToString()
+                                Apellidos = reader["Apellidos"].ToString()
                             });
 
                         }
