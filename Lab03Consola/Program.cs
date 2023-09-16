@@ -10,16 +10,24 @@ class Program
 
     static void Main()
     {
-        var list = ListarEmpleadosListaObjetos();
+        var list = ListarTrabajadoresListaObjetos();
         foreach (var item in list)
         {
             Console.WriteLine(item.Id + "\t" + item.Nombre + "\t" + item.Apellidos + "\t" + item.Sueldo + "\t" + item.FechaVencimiento);
         };
 
+        Console.WriteLine("--------------------------------------------------"); // Separador
+
+        var list2 = ListarTrabajadoresDataTable();
+        foreach (DataRow row in list2.Rows)
+        {
+            Console.WriteLine(row["IdTrabajador"] + "\t" + row["Nombre"] + "\t" + row["Apellidos"] + "\t" + row["Sueldo"] + "\t" + row["FechaVencimiento"]);
+        }
+
     }
 
     //De forma desconectada
-    private static DataTable ListarEmpleadosDataTable()
+    private static DataTable ListarTrabajadoresDataTable()
     {
         // Crear un DataTable para almacenar los resultados
         DataTable dataTable = new DataTable();
@@ -47,7 +55,7 @@ class Program
     }
 
     //De forma conectada
-    private static List<Trabajador> ListarEmpleadosListaObjetos()
+    private static List<Trabajador> ListarTrabajadoresListaObjetos()
     {
         List<Trabajador> trabajador = new List<Trabajador>();
 
