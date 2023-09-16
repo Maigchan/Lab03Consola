@@ -49,7 +49,7 @@ class Program
     //De forma conectada
     private static List<Trabajador> ListarEmpleadosListaObjetos()
     {
-        List<Trabajador> empleados = new List<Trabajador>();
+        List<Trabajador> trabajador = new List<Trabajador>();
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -57,7 +57,7 @@ class Program
             connection.Open();
 
             // Consulta SQL para seleccionar datos
-            string query = "SELECT IdEmpleado,Nombre,Cargo FROM Empleados1";
+            string query = "SELECT IdTrabajador,Nombre,Apellidos,Sueldo,FechaVencimiento FROM Empleados1";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -70,11 +70,13 @@ class Program
                         {
                             // Leer los datos de cada fila
 
-                            empleados.Add(new Trabajador
+                            trabajador.Add(new Trabajador
                             {
                                 Id = (int)reader["IdTrabajador"],
                                 Nombre = reader["Nombre"].ToString(),
-                                Apellidos = reader["Apellidos"].ToString()
+                                Apellidos = reader["Apellidos"].ToString(),
+                                Sueldo = (decimal)reader["Sueldo"],
+                                FechaVencimiento = (DateTime)reader["FechaVencimiento"]
                             });
 
                         }
